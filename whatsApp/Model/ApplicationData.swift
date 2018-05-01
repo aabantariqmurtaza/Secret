@@ -91,7 +91,7 @@ class ApplicationData: NSObject {
                         users.append(User(email: emailId!, u_Id: userId!, nick: nickName!, lang: langugage!, pass: ""))
                     }
                     self.allUsers = users
-                    NotificationCenter.default.post(name: Notification.Name(PARTICULAR_CHAT_LIST_NOTIFICATION), object: nil)
+//                    NotificationCenter.default.post(name: Notification.Name(PARTICULAR_CHAT_LIST_NOTIFICATION), object: nil)
                 }
             }
         }
@@ -138,7 +138,7 @@ class ApplicationData: NSObject {
         var senderRef : DatabaseReference? = nil
         var recieverRef : DatabaseReference? = nil
         if let validModel = respectiveChatUserModel{
-            validModel.chatlist.append(message)
+            validModel.chatlist.insert(message, at: 0)
             if let uid = self.activeUser?.userId {
                 if let u_id = message.to?.userId {
                     senderRef = Database.database().reference(withPath: "ChatList/\(uid)/\(u_id)/messages")
@@ -153,6 +153,7 @@ class ApplicationData: NSObject {
             senderRef?.setValue(array)
             recieverRef?.setValue(array)
         }
+        
     }
     
     static func returnFullUserForId (uid : String) -> User? {

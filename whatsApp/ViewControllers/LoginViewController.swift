@@ -28,7 +28,20 @@ class LoginViewController: UIViewController {
     @IBAction func loginPressed(_ sender: Any) {
         let userInfo = returnModelFromUI()
         
-        Auth.auth().signIn(withEmail: "aban.softengr@gmail.com", password: "123456") { (user, error) in
+//        Auth.auth().signIn(withEmail: "aban.softengr@gmail.com", password: "123456") { (user, error) in
+//            if let _ = error {
+//                return
+//            }
+//
+//            ApplicationData.activeUser = ApplicationData.returnFullUserForId(uid: (user?.uid)!)
+//            ApplicationData.syncChatUsers()
+//
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            let tabVC  = sb.instantiateViewController(withIdentifier: "tabBarVC")
+//            self.navigationController?.pushViewController(tabVC, animated: true)
+//        }
+        
+        Auth.auth().signIn(withEmail: userInfo.emailId, password: userInfo.password) { (user, error) in
             if let _ = error {
                 return
             }
@@ -40,15 +53,6 @@ class LoginViewController: UIViewController {
             let tabVC  = sb.instantiateViewController(withIdentifier: "tabBarVC")
             self.navigationController?.pushViewController(tabVC, animated: true)
         }
-        
-//        Auth.auth().signIn(withEmail: userInfo.emailId, password: userInfo.password) { (user, error) in
-//            if let _ = error {
-//                return
-//            }
-//            let sb = UIStoryboard(name: "Main", bundle: nil)
-//            let tabVC  = sb.instantiateViewController(withIdentifier: "tabBarVC")
-//            self.navigationController?.pushViewController(tabVC, animated: true)
-//        }
     }
     
     func returnModelFromUI() -> User {

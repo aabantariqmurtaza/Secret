@@ -35,6 +35,7 @@
 		706A37762094A8950065D00C /* OneMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A37752094A8950065D00C /* OneMessageModel.swift */; };
 		706A37782094E3B60065D00C /* ChatUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A37772094E3B60065D00C /* ChatUserModel.swift */; };
 		70ABFD9220936AAE008183E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70ABFD9120936AAE008183E1 /* GoogleService-Info.plist */; };
+		70BEDFE62097E71100C4CB3F /* LangugageTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BEDFE52097E71100C4CB3F /* LangugageTranslator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		706A37752094A8950065D00C /* OneMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMessageModel.swift; sourceTree = "<group>"; };
 		706A37772094E3B60065D00C /* ChatUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserModel.swift; sourceTree = "<group>"; };
 		70ABFD9120936AAE008183E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70BEDFE52097E71100C4CB3F /* LangugageTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangugageTranslator.swift; sourceTree = "<group>"; };
 		AECF46CDBCBB206712BDB68E /* Pods-whatsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whatsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-whatsApp/Pods-whatsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +258,7 @@
 				706A376B20949DDF0065D00C /* ApplicationData.swift */,
 				706A37752094A8950065D00C /* OneMessageModel.swift */,
 				706A37772094E3B60065D00C /* ChatUserModel.swift */,
+				70BEDFE52097E71100C4CB3F /* LangugageTranslator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReverseExtension/ReverseExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -475,6 +479,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReverseExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -500,6 +505,7 @@
 				706A37762094A8950065D00C /* OneMessageModel.swift in Sources */,
 				70081805208F8DEB000A5879 /* SingleChatMessageTableViewCell.swift in Sources */,
 				706A37742094A7F80065D00C /* Constants.swift in Sources */,
+				70BEDFE62097E71100C4CB3F /* LangugageTranslator.swift in Sources */,
 				7042A0A2209387CB00D078F5 /* User.swift in Sources */,
 				700817FD208F89BF000A5879 /* AllChatViewController.swift in Sources */,
 				700CA80E208E2A74005953AD /* AppDelegate.swift in Sources */,

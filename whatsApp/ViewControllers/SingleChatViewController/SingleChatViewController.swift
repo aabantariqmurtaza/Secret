@@ -7,17 +7,35 @@
 
 
 import UIKit
+import ReverseExtension
 
 class SingleChatViewController: UIViewController {
 
+    @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var chatTxtField: UITextField!
     @IBOutlet weak var chatTableView: UITableView!
     var to_user : User? = nil
     var messages : Array<OneMessageModel>? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fillOtherUser()
+        chatTableView.re.delegate = self
+        self.usernameLbl.text = to_user?.nickName
         NotificationCenter.default.addObserver(self, selector: #selector(self.datasourceUpdated), name: Notification.Name(PARTICULAR_CHAT_LIST_NOTIFICATION), object: nil)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ApplicationData.returnMessageArrayAgainst(sender: ApplicationData.activeUser!, reciever: to_user!)
+    }
+    
+    func fillOtherUser(){
+        if (messages?.first?.to?.userId == ApplicationData.activeUser?.userId){
+            to_user = ApplicationData.returnFullUserForId(uid: (messages?.first?.from?.userId)!)
+        }else{
+            to_user = ApplicationData.returnFullUserForId(uid: (messages?.first?.to?.userId)!)
+        }
     }
     
     @objc func datasourceUpdated(){
@@ -38,10 +56,11 @@ class SingleChatViewController: UIViewController {
     
     @IBAction func sendMessage(_ sender: Any) {
         if (messages?.first?.to?.userId == ApplicationData.activeUser?.userId){
-            ApplicationData.addOneMessage(message: OneMessageModel(msg_: chatTxtField.text!, to_user: (messages?.first?.from)!, from_user: ApplicationData.activeUser!))
+            ApplicationData.addOneMessage(message: OneMessageModel(msg_: chatTxtField.text!, to_user: (to_user)!, from_user: ApplicationData.activeUser!))
         }else{
-            ApplicationData.addOneMessage(message: OneMessageModel(msg_: chatTxtField.text!, to_user: (messages?.first?.to)!, from_user: ApplicationData.activeUser!))
+            ApplicationData.addOneMessage(message: OneMessageModel(msg_: chatTxtField.text!, to_user: (to_user)!, from_user: ApplicationData.activeUser!))
         }
+        chatTxtField.text = ""
     }
     
     @IBAction func dismissViewController(_ sender: Any) {

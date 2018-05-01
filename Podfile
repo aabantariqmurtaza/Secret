@@ -13,5 +13,6 @@ target 'whatsApp' do
   pod 'Firebase/Auth'
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Database'
+  pod 'ReverseExtension'
 
 end

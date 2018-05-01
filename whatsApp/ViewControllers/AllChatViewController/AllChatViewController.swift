@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AllChatViewController: UIViewController {
 
@@ -17,6 +18,17 @@ class AllChatViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.datasourceUpdated), name: Notification.Name(ALL_CHAT_LIST_NOTIFICATION), object: nil)
     }
 
+    @IBAction func popToLoginVC(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+            return
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func presentAllUserVC(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let allUsersVC : AllUsersViewController  = sb.instantiateViewController(withIdentifier: "AllUsersVC") as! AllUsersViewController
@@ -63,7 +75,7 @@ extension AllChatViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let singleChatVC : SingleChatViewController  = sb.instantiateViewController(withIdentifier: "SingleChatViewController") as! SingleChatViewController
-        ApplicationData.returnMessageArrayAgainst(sender: ApplicationData.activeUser!, reciever: ApplicationData.chatList[indexPath.row].user)
+//        ApplicationData.returnMessageArrayAgainst(sender: ApplicationData.activeUser!, reciever: ApplicationData.chatList[indexPath.row].user)
         _ = ApplicationData.chatList[indexPath.row].chatlist
         singleChatVC.messages = ApplicationData.chatList[indexPath.row].chatlist
         singleChatVC.to_user = ApplicationData.chatList[indexPath.row].user

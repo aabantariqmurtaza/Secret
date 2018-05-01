@@ -66,6 +66,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
+  - ReverseExtension (0.5.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - GoogleSignIn
   - IQKeyboardManagerSwift
+  - ReverseExtension
 
 SPEC CHECKSUMS:
   Firebase: d7fdf40e4d6c841849c52919f437fd3a0009ded0
@@ -91,7 +93,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  ReverseExtension: 21c8dd4e767f93b56fb97d873686d24160f83945
 
-PODFILE CHECKSUM: d2a9a9b34137645fc56fd3a83ee8a179dd9fc4b9
+PODFILE CHECKSUM: 438dc103eef38d40a9a4ff87e38d0c4d3ff58483
 
 COCOAPODS: 1.4.0

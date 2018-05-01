@@ -8,6 +8,9 @@
 
 import UIKit
 
+let ACCESS_TOKEN = "ya29.GlutBZrzW0Spf0wLG20EV6TB21D4J7WsC1muoaAicMTOKV2JBIbtzO095jBGkR81XmeQYGJAgAWwcOY8VEhqsVmlij-yW18y0ovXRjlDFwvg7VwJ0N0_2EI3D12B"
+
+
 let USER_NICK_NAME_KEY = "username"
 let USER_EMAIL_ID_KEY = "userEmail"
 let USER_ID_KEY = "userId"
